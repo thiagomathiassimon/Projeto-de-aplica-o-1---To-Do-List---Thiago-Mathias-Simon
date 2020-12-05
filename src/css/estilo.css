@@ -1,0 +1,122 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-image: url('https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+
+header {
+    background-color: green;
+    color: white;
+    text-align: center;
+    margin: 1% 1% 0% 1%;
+    border: solid;
+    border-color: black;
+    padding: 1%;
+}
+
+#novoItem {
+    text-align: center;
+    background-color: blue;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    margin: 0% 1% 0% 1%;
+    border: solid;
+    border-color: black;
+    padding: 1%;
+}
+
+#listaItens {
+    text-align: center;
+    background-color: gray;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    margin: 1%;
+    margin-top: 0%;
+    border: solid;
+    border-color: black;
+    padding: 1%;
+}
+
+#inpItem {
+    padding: 5px;
+    border: 1%;
+    border-color: gray;
+    display: inline;
+    justify-content: center;
+}
+
+#buttAdicionar {
+    font: bold;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-color: green;
+    border: 1%;
+    border-color: gray;
+    padding: 3px;
+    cursor: pointer;
+}
+
+#buttAdicionar:hover {
+    background-color: red;
+}
+
+#buttRemover {
+    font: bold;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-color: green;
+    border: 1%;
+    border-color: gray;
+    padding: 3px;
+    cursor: pointer;
+}
+
+#buttRemover:hover {
+    background-color: red;
+}
+
+#listaDeAtividades {
+    margin: 0%;
+    list-style: none;
+    text-align: justify;
+}
+
+.close {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    right: 2%;
+}
+
+.close:hover {
+    background-color: #888;
+}
+
+input[type=checkbox]:checked+label {
+    color: red;
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+}
+
+ul li {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+label {
+    margin-left: 1%;
+}
