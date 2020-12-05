@@ -76,9 +76,44 @@ header {
     border-color: gray;
     padding: 3px;
     cursor: pointer;
+    margin-top: 1%;
 }
 
 #buttRemover:hover {
+    background-color: red;
+}
+
+#btnMarcarTodos {
+    font: bold;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-color: green;
+    border: 1%;
+    border-color: gray;
+    padding: 3px;
+    cursor: pointer;
+    margin-top: 1%;
+}
+
+#btnMarcarTodos:hover {
+    background-color: red;
+}
+
+#btnDesmarcarTodos {
+    font: bold;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-color: green;
+    border: 1%;
+    border-color: gray;
+    padding: 3px;
+    cursor: pointer;
+    margin-top: 1%;
+}
+
+#btnDesmarcarTodos:hover {
     background-color: red;
 }
 
