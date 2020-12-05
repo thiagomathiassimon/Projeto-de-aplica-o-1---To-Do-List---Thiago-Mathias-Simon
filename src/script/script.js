@@ -13,7 +13,7 @@ var marcacao = false;
 var lista = [];
 obterListaDoLocalStorage();
 
-function alerta() {
+function alteraCheck() {
     var marcados = document.querySelectorAll('#checkbox');
     console.log(marcados + ' marcarTodos');
     for (var i = 0; i < marcados.length; i++) {
@@ -79,7 +79,7 @@ function adicionaItem() {
 
 function criaElementoHtml(item, marcado) {
     var itemLista = document.createElement('li');
-    var i1 = createInput('checkbox', 'checkbox', 'checkbox', alerta, marcado, '1');
+    var i1 = createInput('checkbox', 'checkbox', 'checkbox', alteraCheck, marcado, '1');
     var l1 = createLabel(item);
     var buttonClose = createCloseButton();
     listaDeAtividades.appendChild(itemLista);
