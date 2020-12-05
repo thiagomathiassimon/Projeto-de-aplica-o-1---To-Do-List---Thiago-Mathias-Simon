@@ -90,7 +90,7 @@ function marcarTodos() {
     var marcados = document.querySelectorAll('#checkbox');
     for (var i = 0; i < marcados.length; i++) {
         marcados[i].checked = true;
-        marcacao = true;
+        salvaAlteraçãoDoCheckboxNoLocalStorage(i, true);
     }
 }
 
@@ -99,7 +99,7 @@ function desmarcarTodos() {
     var marcados = document.querySelectorAll('#checkbox');
     for (var i = 0; i < marcados.length; i++) {
         marcados[i].checked = false;
-        marcacao = false;
+        salvaAlteraçãoDoCheckboxNoLocalStorage(i, false);
     }
 }
 
