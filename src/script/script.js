@@ -59,8 +59,14 @@ function obterListaDoLocalStorage() {
 
 //função que remove todos os itens da lista armazenados no LocalStorage
 function romoverTodosOsItensDoLocalStorage() {
-    localStorage.removeItem('toDoList');
-    window.location.reload();
+    var confirm = window.confirm("Tem certeza que quer excluir todos os seus itens?")
+    if (confirm == true) {
+        localStorage.removeItem('toDoList');
+        window.location.reload();
+    } else {
+        window.alert("Os itens serão mantidos.")
+
+    }
 }
 
 //função que altera a marcação dum checkbox está marcado ou não
@@ -87,33 +93,44 @@ function salvaAlteraçãoDoCheckboxNoLocalStorage(i, checado) {
 
 //função que marca todos os checkboxes
 function marcarTodos() {
-    var marcados = document.querySelectorAll('#checkbox');
-    for (var i = 0; i < marcados.length; i++) {
-        marcados[i].checked = true;
-        salvaAlteraçãoDoCheckboxNoLocalStorage(i, true);
+    var confirm = window.confirm("Quer marcar todos os seus itens como concluídos?")
+    if (confirm == true) {
+        var marcados = document.querySelectorAll('#checkbox');
+        for (var i = 0; i < marcados.length; i++) {
+            marcados[i].checked = true;
+            salvaAlteraçãoDoCheckboxNoLocalStorage(i, true);
+        }
     }
 }
 
 //função que desmarca todos os checkboxes
 function desmarcarTodos() {
-    var marcados = document.querySelectorAll('#checkbox');
-    for (var i = 0; i < marcados.length; i++) {
-        marcados[i].checked = false;
-        salvaAlteraçãoDoCheckboxNoLocalStorage(i, false);
+    var confirm = window.confirm("Quer desmarcar todos os seus itens?")
+    if (confirm == true) {
+        var marcados = document.querySelectorAll('#checkbox');
+        for (var i = 0; i < marcados.length; i++) {
+            marcados[i].checked = false;
+            salvaAlteraçãoDoCheckboxNoLocalStorage(i, false);
+        }
     }
 }
 
 //função que apaga um item quando da ativação do botão com um "X"
 function apagarItem() {
-    this.id = "remova"
-    var btnClassClose = document.querySelectorAll('.close');
-    for (var i = 0; i < lista.length; i++) {
-        if (btnClassClose[i].id == 'remova') {
-            var posicaoNaLista = lista.indexOf(lista[i])
-            var removido = lista.splice(posicaoNaLista, 1)
-            localStorage.setItem('toDoList', JSON.stringify(lista));
-            window.location.reload();
+    var confirm = window.confirm("Deseja realmente excluir este item?")
+    if (confirm == true) {
+        this.id = "remova"
+        var btnClassClose = document.querySelectorAll('.close');
+        for (var i = 0; i < lista.length; i++) {
+            if (btnClassClose[i].id == 'remova') {
+                var posicaoNaLista = lista.indexOf(lista[i])
+                var removido = lista.splice(posicaoNaLista, 1)
+                localStorage.setItem('toDoList', JSON.stringify(lista));
+                window.location.reload();
+            }
         }
+    } else {
+        window.alert("O item será mantido.")
     }
 }
 
