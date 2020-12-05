@@ -59,7 +59,7 @@ function obterListaDoLocalStorage() {
 
 //função que remove todos os itens da lista armazenados no LocalStorage
 function romoverTodosOsItensDoLocalStorage() {
-    localStorage.clear('toDoList');
+    localStorage.removeItem('toDoList');
     window.location.reload();
 }
 
@@ -105,10 +105,22 @@ function desmarcarTodos() {
 
 //função que apaga um item quando da ativação do botão com um "X"
 function apagarItem() {
-    for (var i = 0; i < closer.length; i++) {
-        closer[i].onclick = function() {
-            var div = this.parentElement;
-            div.style.display = "none";
+    console.log(this)
+    this.id = "remova"
+    console.log(this)
+    var marcados = document.querySelectorAll('.close');
+    for (var i = 0; i < lista.length; i++) {
+        console.log(marcados[i])
+        if (marcados[i].id == 'remova') {
+            console.log('remoção iniciada...')
+            console.log(lista[i].item)
+            var posicaoNaLista = lista.indexOf(lista[i])
+            console.log(posicaoNaLista)
+            var removido = lista.splice(posicaoNaLista, 1)
+            console.log(removido)
+            console.log(lista)
+            localStorage.setItem('toDoList', JSON.stringify(lista));
+            window.location.reload();
         }
     }
 }
@@ -118,7 +130,7 @@ function createCloseButton() {
     var buttonClose = document.createElement("button");
     buttonClose.className = "close";
     buttonClose.innerHTML = "\u274C";
-    buttonClose.onclick = apagarItem();
+    buttonClose.onclick = apagarItem;
     return buttonClose;
 }
 
