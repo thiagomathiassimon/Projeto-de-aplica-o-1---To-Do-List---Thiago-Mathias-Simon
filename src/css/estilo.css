@@ -1,11 +1,19 @@
+/* define as margens e os paddings da página html */
+
 * {
     margin: 0%;
     padding: 0%;
 }
 
+
+/* define a imagem de fundo do body da página */
+
 body {
     background-image: url('https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
+
+
+/* cria o estilo do header (cabeçalho) da página */
 
 header {
     background-color: green;
@@ -17,7 +25,10 @@ header {
     padding: 1%;
 }
 
-#novoItem {
+
+/* cria o estilo da div com o campo de inserção de novo item e os botões adicionar, remover todos, marcar todos e desmarcar todos */
+
+#divNovoItem {
     text-align: center;
     background-color: blue;
     color: white;
@@ -29,7 +40,44 @@ header {
     padding: 1%;
 }
 
-#listaItens {
+
+/* cria o estilo do input de inserção de texto (novo item) */
+
+#inpItem {
+    padding: 5px;
+    border: 1%;
+    border-color: gray;
+    display: inline;
+    justify-content: center;
+}
+
+
+/* cria o estilo dos botões da primeira div */
+
+.btn {
+    font: bold;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-color: green;
+    border: 1%;
+    border-color: gray;
+    padding: 3px;
+    cursor: pointer;
+    margin-top: 1%;
+}
+
+
+/* muda o estilo dos botões da primeira div quando o mouse é sobre eles passado */
+
+.btn:hover {
+    background-color: red;
+}
+
+
+/* cria o estilo da seunda div */
+
+#divListaItens {
     text-align: center;
     background-color: gray;
     color: white;
@@ -42,86 +90,17 @@ header {
     padding: 1%;
 }
 
-#inpItem {
-    padding: 5px;
-    border: 1%;
-    border-color: gray;
-    display: inline;
-    justify-content: center;
-}
 
-#buttAdicionar {
-    font: bold;
-    font-size: medium;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    background-color: green;
-    border: 1%;
-    border-color: gray;
-    padding: 3px;
-    cursor: pointer;
-}
-
-#buttAdicionar:hover {
-    background-color: red;
-}
-
-#buttRemover {
-    font: bold;
-    font-size: medium;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    background-color: green;
-    border: 1%;
-    border-color: gray;
-    padding: 3px;
-    cursor: pointer;
-    margin-top: 1%;
-}
-
-#buttRemover:hover {
-    background-color: red;
-}
-
-#btnMarcarTodos {
-    font: bold;
-    font-size: medium;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    background-color: green;
-    border: 1%;
-    border-color: gray;
-    padding: 3px;
-    cursor: pointer;
-    margin-top: 1%;
-}
-
-#btnMarcarTodos:hover {
-    background-color: red;
-}
-
-#btnDesmarcarTodos {
-    font: bold;
-    font-size: medium;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    background-color: green;
-    border: 1%;
-    border-color: gray;
-    padding: 3px;
-    cursor: pointer;
-    margin-top: 1%;
-}
-
-#btnDesmarcarTodos:hover {
-    background-color: red;
-}
+/* cria o estilo da ul que receberá as li geradas pelo javascript */
 
 #listaDeAtividades {
     margin: 0%;
     list-style: none;
     text-align: justify;
 }
+
+
+/* cria o estilo do botão que exclui uma determinada li da ul (bem como o checkbox e este próprio button) */
 
 .close {
     cursor: pointer;
@@ -131,9 +110,15 @@ header {
     right: 2%;
 }
 
+
+/* muda o estilo dos botões de exclusão quando o mouse é sobre eles passado */
+
 .close:hover {
     background-color: #888;
 }
+
+
+/* faz com que, quando da seleção do checkbox, seu respectivo label seja tachado (riscado) */
 
 input[type=checkbox]:checked+label {
     color: red;
@@ -141,9 +126,15 @@ input[type=checkbox]:checked+label {
     cursor: pointer;
 }
 
+
+/* faz com que o mouse, ao passar sobre o checkbox, torne-se um pointer (popularmente uma "mãozinha") */
+
 input[type=checkbox] {
     cursor: pointer;
 }
+
+
+/* impede a seleção da ul e do li, permitindo apenas a seleção do checkbox */
 
 ul li {
     -webkit-user-select: none;
@@ -151,6 +142,9 @@ ul li {
     -ms-user-select: none;
     user-select: none;
 }
+
+
+/* adiciona uma margim ao label para que o mesmo fique levemente afastado do checkbox */
 
 label {
     margin-left: 1%;
