@@ -67,7 +67,7 @@ function guardarNoLocalStorage(item, marcado) {
 // função que identifica se a lista está vazia
 function listaEstaVazia() {
     if (lista.length == 0) {
-        window.alert("Sua lista está vazia.\nAdicione alguns items a ela!")
+        window.alert("Sua lista está vazia.\nAdicione alguns itens a ela!")
     }
 }
 
