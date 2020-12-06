@@ -9,16 +9,41 @@ var closeButton = document.getElementsByTagName("LI");
 var marcacao = false;
 var lista = [];
 obterListaDoLocalStorage();
+setTimeout(listaEstaVazia, 2000);
 
 //função que adiciona o item digitado à lista de itens
 function adicionaItem() {
+    verificarItemJaExiste();
     var itemNaLista = document.getElementById('inpItem').value;
     if (itemNaLista.length) {
         criaElementoHtml(itemNaLista);
         guardarNoLocalStorage(itemNaLista, marcacao);
         itemNovo.value = "";
     } else {
-        window.alert("Insira um valor para adicionar na lista!")
+        window.alert("Insira um item para adicionar na lista!")
+    }
+}
+
+// função que identifica se a lista está vazia
+function listaEstaVazia() {
+    if (lista.length == 0) {
+        window.alert("Sua lista está vazia\nAdicione alguns items a ela!")
+    }
+}
+
+// função que verifica se o item a ser adicionado já está presente na lista
+function verificarItemJaExiste() {
+    if (lista.length) {
+        for (var i = 0; i < lista.length; i++) {
+            if (lista[i].item.toUpperCase() == itemNovo.value.toUpperCase()) {
+                var inserirNovamente = window.confirm("Você já inseriu esse item\nDeseja inseri-lo novamente?");
+                if (inserirNovamente == true) {
+                    break;
+                } else {
+                    itemNovo.value = "";
+                }
+            }
+        }
     }
 }
 
