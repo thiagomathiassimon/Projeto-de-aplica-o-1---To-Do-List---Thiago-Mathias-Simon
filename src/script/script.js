@@ -24,19 +24,12 @@ function adicionaItem() {
     }
 }
 
-// função que identifica se a lista está vazia
-function listaEstaVazia() {
-    if (lista.length == 0) {
-        window.alert("Sua lista está vazia\nAdicione alguns items a ela!")
-    }
-}
-
 // função que verifica se o item a ser adicionado já está presente na lista
 function verificarItemJaExiste() {
     if (lista.length) {
         for (var i = 0; i < lista.length; i++) {
             if (lista[i].item.toUpperCase() == itemNovo.value.toUpperCase()) {
-                var inserirNovamente = window.confirm("Você já inseriu esse item\nDeseja inseri-lo novamente?");
+                var inserirNovamente = window.confirm("Você já inseriu esse item.\nDeseja inseri-lo novamente?");
                 if (inserirNovamente == true) {
                     break;
                 } else {
@@ -69,6 +62,13 @@ function guardarNoLocalStorage(item, marcado) {
     var objItens = { 'item': item, 'checked': marcado }
     lista.push(objItens);
     localStorage.setItem('toDoList', JSON.stringify(lista));
+}
+
+// função que identifica se a lista está vazia
+function listaEstaVazia() {
+    if (lista.length == 0) {
+        window.alert("Sua lista está vazia.\nAdicione alguns items a ela!")
+    }
 }
 
 //função que obtém a lista salva no LocalStorage
